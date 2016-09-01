@@ -1,38 +1,40 @@
-<ion-side-menus >
+<ion-side-menus enable-menu-with-back-views="false">
 
-	<!-- ion-side-menu-content
-	This is where the main content of the application is inserted
-	 -->
-	<ion-side-menu-content >
-		<ion-nav-bar class="bar-positive" >
-			<ion-nav-back-button >
-			</ion-nav-back-button >
+	<ion-side-menu-content>
+		<ion-nav-bar class="bar-positive">
+			<ion-nav-back-button>
+			</ion-nav-back-button>
 
-			<ion-nav-buttons side="left" >
-				<button class="button button-icon button-clear ion-navicon"
-				        menu-toggle="left" >
-				</button >
-			</ion-nav-buttons >
-		</ion-nav-bar >
-		<ion-nav-view name="menuContent" ></ion-nav-view >
-	</ion-side-menu-content >
+			<ion-nav-buttons side="left">
+				<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+				</button>
+			</ion-nav-buttons>
 
-	<!-- ion-side-menu
-	This is the main menu area (the menu that's revealed when the user
-	presses the hamburger icon
-	 -->
-	<ion-side-menu side="left" >
-		<ion-header-bar class="bar-light" >
-			<img src="img/DHEERAN_TV_LOGO.png" style="height: 79px;width: 76px;margin-top: -21px;margin-left: -4px;">
+			<ion-nav-buttons side="right">
+				<button class="button button-clear icon ion-search" ng-click="showFilterBar()" ></button>
+				<button class="button button-clear icon ion-monitor" ng-click="GoToPrograms()"></button>
+				<button class="button button-clear icon ion-home" ng-click="GoToHome()"></button>
+			</ion-nav-buttons>
+		</ion-nav-bar>
+
+		<ion-nav-view name="menuContent"></ion-nav-view>
+	</ion-side-menu-content>
+
+	<ion-side-menu side="left">
+		<ion-header-bar class="bar-light dark-bg expanded" >
+			<!--<img src="img/DHEERAN_TV_LOGO.png" style="height: 79px;width: 76px;margin-top: -21px;margin-left: -4px;">-->
+
+			<span class="avatar" style="background: url('img/DHEERAN_TV_LOGO.png'); background-size: cover;"></span>
+
 			<h1 class="title" >
-			Dheeran TV
+				Dheeran TV
 			</h1 >
 		</ion-header-bar >
-		<ion-content >
+		<ion-content class="has-expanded-header">
 			<ion-list >
 				<ion-item menu-close
-				          ui-sref-active='active'
-				          ui-sref="app.home" >
+						  ui-sref-active='active'
+						  ui-sref="app.home" >
 					<i class="ion-laptop" ></i >
 					&nbsp;TV
 				</ion-item >
@@ -40,10 +42,47 @@
 
 				<ion-item menu-close
 
-						  ui-sref="app.rajaneram" >
+						  ui-sref="app.programs" >
 					<i class="ion-videocamera" ></i >
-					&nbsp;Rajaneram
+					&nbsp;Programs
 				</ion-item >
+
+				<ion-item menu-close
+
+						  ui-sref="app.aboutus" >
+					<i class="ion-person-stalker" ></i >
+					&nbsp;About Us
+				</ion-item >
+
+				<ion-item menu-close
+
+						  ui-sref="app.technical" >
+					<i class="ion-ios-albums-outline" ></i >
+					&nbsp;Technical
+				</ion-item >
+
+
+				<ion-item menu-close
+
+						  ui-sref="app.advertise" >
+					<i class="ion-ios-pricetags-outline" ></i >
+					&nbsp;Advertise
+				</ion-item >
+
+
+				<ion-item menu-close
+
+						  ui-sref="app.broadcast" >
+					<i class="ion-easel" ></i >
+					&nbsp;Broadcast
+				</ion-item >
+
+			<!--	<ion-item menu-close
+
+						  ui-sref="app.contactus" >
+					<i class="ion-videocamera" ></i >
+					&nbsp;Contact Us
+				</ion-item >-->
 
 
 				<!--<ion-item menu-close
@@ -77,5 +116,6 @@
 		<ion-footer-bar class="bar-light" style="height:49px !important;  ">
 			<h1 class="title" style="font-size: 15px !important;"> COPYRIGHT &copy;2016 Dheeran TV</h1>
 		</ion-footer-bar>
-	</ion-side-menu >
-</ion-side-menus >
+	</ion-side-menu>
+
+</ion-side-menus>

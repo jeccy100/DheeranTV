@@ -1,5 +1,14 @@
-<ion-view title="Dheeran TV"
-          class="search" >
+<ion-view view-title="Dheeran TV">
+
+	<!--<ion-nav-buttons side="right">
+
+		<button class="button button-clear icon ion-search" ng-click="showFilterBar()" ></button>
+		<button class="button button-clear icon ion-monitor" ></button>
+		<button class="button button-clear icon ion-home" ></button>
+	</ion-nav-buttons>-->
+
+
+
 	<ion-content >
 
 		<!-- Search Input Control -->
@@ -12,7 +21,9 @@
 			</label >
 		</div >-->
 
-
+	<!--	<br>
+		<autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true" data="movies" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
+-->
 
 		<div class="card">
 			<div class="item item-text-wrap">
@@ -22,10 +33,10 @@
 
 
 
-		<ion-list >
+		<!--<ion-list >
 			<ion-item ng-repeat="video in videos" class="item-thumbnail-left" >
-				<img ng-src="{{video.snippet.thumbnails.default.url}}">
-					<!-- ng-style="{backgroundImage:'url(' + video.thumbnails.default.url +')'}" >-->
+				<img ng-src="{{video.snippet.thumbnails.default.url}}" ng-click="getSetVideo(video.id.videoId);";>
+
 				</div >
 				<h2 >{{video.snippet.title}}</h2 >
 
@@ -42,7 +53,7 @@
 
 
 			</ion-item >
-		</ion-list >
+		</ion-list >-->
 			<!-- No Results Found Message -->
 			<!--	<div ng-show="filteredShows.length == 0" >
                     <p class="text-center" >No results found for search '{{search.name}}'</p >
@@ -86,7 +97,7 @@
 
 
 		</ion-list >-->
-
+		<!--<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>-->
 
 	</ion-content >
 </ion-view >

@@ -11,8 +11,13 @@
 	<link href="css/ionic.app.css"
 	      rel="stylesheet" >
 
+	<link href="lib/autocomplete/autocomplete.css"
+		  rel="stylesheet" >
+
 	<!-- ionic/angularjs js -->
-	<script src="lib/ionic/js/ionic.bundle.min.js" ></script >
+	<script src="lib/jquery/jquery-1.11.1.min.js"></script>
+	<!--<script src="lib/ionic/js/ionic.bundle.min.js" ></script >-->
+	<script src="lib/ionic/js/ionic.bundle.nightly.js" ></script >
 	<script src="lib/ngCordova/dist/ng-cordova.js" ></script >
 	<script src="lib/firebase.js" ></script >
 	<script src="lib/angularfire/dist/angularfire.min.js" ></script >
@@ -20,7 +25,9 @@
 	<script src="lib/moment/moment.js" ></script >
 	<script src="lib/angular-momentjs/angular-momentjs.min.js" ></script >
 	<script src="lib/openfb/openfb.js" ></script >
-
+	<script src="lib/autocomplete/autocomplete.js" ></script >
+	<link href="lib/autocomplete/ionic.filter.bar.css" rel="stylesheet">
+	<script src="lib/autocomplete/ionic.filter.bar.js"></script>
 	<!-- cordova script (this will be a 404 during development) -->
 	<script src="cordova.js" ></script >
 
@@ -44,6 +51,8 @@
 	<script src="js/controllers/show.js" ></script >
 	<script src="js/controllers/menu.js" ></script >
 	<script src="js/controllers/rajaneram.js" ></script >
+	<script src="js/controllers/programs.js" ></script >
+	<script src="js/controllers/program.js" ></script >
 	<script src="js/controllers.js" ></script >
 
 	<script src="js/services/shows.js" ></script >
@@ -51,7 +60,92 @@
 	<script src="js/services/utils.js" ></script >
 	<script src="js/services.js" ></script >
 
+<style>
 
+
+	.loading{
+	background-color: rgba(240, 50, 50, 0.7) !important;
+	}
+
+	.icon{
+	font-size: 35px !important;
+	}
+
+
+
+
+	/* Menu
+	==================================*/
+	.menu .bar.bar-header.expanded {
+	transition: all .5s ease-in-out;
+	}
+
+/*	.menu-open .bar.bar-header.expanded {
+	background-color: #222;
+	}*/
+
+	.menu h2 {
+	bottom: 0;
+	font-size: 18px;
+	left: 16px;
+	position: absolute;
+	}
+
+	.menu .avatar {
+	height: 88px;
+	width: 88px;
+	}
+
+	.menu.menu-left * {
+	font-weight: bold;
+	}
+
+	.menu-open .ion-navicon {
+	transform: rotate(-360deg);
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	}
+
+	.menu-open .ion-navicon:before {
+	content: "\f2ca";
+	}
+
+	.has-expanded-header {
+	top: 150px!important;
+	}
+
+
+	.menu .avatar {
+	height: 88px;
+	width: 88px;
+	}
+	.menu-open .avatar {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: translateZ(0) rotate(0) scale(1)!important;
+	transform: translateZ(0) rotate(0) scale(1)!important;
+	-webkit-transition: all .3s ease-out!important;
+	transition: all .3s ease-out!important;
+	}
+	.menu .avatar {
+	top: 16px;
+	left: 16px;
+	height: 65px;
+	width: 65px;
+	}
+	.avatar, .item-avatar .avatar {
+	background-position: center;
+	background-size: cover;
+	border-radius: 50%;
+	display: inline-block;
+	height: 56px;
+	left: 16px;
+	position: absolute;
+	width: 56px;
+	}
+
+
+</style>
 
 </head >
 <body ng-app="dheerantv"  class="platform-android platform-cordova platform-webview">
@@ -70,5 +164,6 @@
 	have templates inline in this html file if you'd like).
 -->
 <ion-nav-view ></ion-nav-view >
+
 </body >
 </html >

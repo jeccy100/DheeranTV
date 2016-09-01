@@ -1,6 +1,41 @@
 var mod = angular.module('dheerantv.services.showService', []);
 
 
+
+
+mod.service('getYoutubeVideos',function(YOUTUBE_PARAMS,$http,$q){
+
+this.getVideos = function (numberOfRecords) {
+YOUTUBE_PARAMS.maxResults=numberOfRecords;
+
+var deferred = $q.defer();
+
+return $http.get('https://www.googleapis.com/youtube/v3/search', {params:YOUTUBE_PARAMS}).success(function(response){
+
+         deferred.resolve(response.items);
+       return deferred.promise;
+      }).error(function(msg, code) {
+      alert(msg);
+     			deferred.reject(msg);
+
+                  // $log.error(msg, code);
+
+                });
+
+
+
+      ;
+
+
+    }
+
+
+
+
+//      $scope.hide();
+    });
+
+
 mod.service('ShowsService', function () {
 
 	var self = {

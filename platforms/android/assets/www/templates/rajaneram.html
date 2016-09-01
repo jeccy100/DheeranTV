@@ -27,11 +27,7 @@
 <ion-view title="Rajaneram Episodes"
           class="search" >
     <ion-content >
-        <ion-infinite-scroll
-                     on-infinite="loadMore()"
-                     distance="1%">
-               </ion-infinite-scroll>
-         </ion-content>
+
         <!-- Search Input Control -->
        <!-- <div class="bar bar-header item-input-inset" >
             <label class="item-input-wrapper" >
@@ -57,6 +53,6 @@
         </div>
 
 
-
+        <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
     </ion-content >
 </ion-view >
