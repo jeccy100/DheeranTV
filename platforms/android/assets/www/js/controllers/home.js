@@ -7,6 +7,7 @@ $scope.videos = [];
 $scope.noMoreItemsAvailable = true;
 
 $scope.playerInstance = jwplayer("player");
+
           $scope.playerInstance.setup({
                                     playlist:[{
                                        file:"http://edgecastdheerantv.purplestream.in/dheeranorg/ngrp:dheeran_all/playlist.m3u8",

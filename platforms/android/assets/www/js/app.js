@@ -47,6 +47,8 @@ app.run(function ($rootScope, $ionicPlatform, $cordovaStatusbar) {
 			}
 
 			 document.addEventListener("offline", onOffline, false);
+			 document.addEventListener("pause", onPause, false);
+
 
 
             // Handle the offline event
@@ -54,6 +56,18 @@ app.run(function ($rootScope, $ionicPlatform, $cordovaStatusbar) {
             function onOffline() {
                 navigator.notification.alert("You are offline.Please check your internet connection.",null, "Dheeran TV", "Ok");
             }
+
+
+             function onPause() {
+                             // Handle the pause event
+                             console.log('pause event fired!!');
+                            // jwplayer("player").stop();
+                            jwplayer("player").pause();
+
+                         }
+
+
+
 		});
 	});
 
@@ -94,7 +108,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             						templateUrl: "templates/home.html",
             						controller: 'HomeCtrl'
             					}
-            				}
+            				},
+            				onExit: function(){
+                                console.log('exiting from home');
+                                //jwplayer("player").stop();
+                                jwplayer("player").pause();
+                              }
             			})
 
 

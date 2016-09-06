@@ -22,11 +22,11 @@
 
 	<ion-side-menu side="left">
 		<ion-header-bar class="bar-light dark-bg expanded" >
-			<!--<img src="img/DHEERAN_TV_LOGO.png" style="height: 79px;width: 76px;margin-top: -21px;margin-left: -4px;">-->
+			<img src="img/DHEERAN_TV_LOGO.png" style="height: 79px;width: 76px;margin-top: -21px;margin-left: -4px;">
 
-			<span class="avatar" style="background: url('img/DHEERAN_TV_LOGO.png'); background-size: cover;"></span>
+			<!--<span class="avatar" style="background: url('img/DHEERAN_TV_LOGO.png'); background-size: cover;"></span>-->
 
-			<h1 class="title" style="color:blue;">
+			<h1 class="title" style="color:white;">
 				Dheeran TV
 			</h1 >
 		</ion-header-bar >
@@ -35,7 +35,7 @@
 				<ion-item menu-close
 						  ui-sref-active='active'
 						  ui-sref="app.home" >
-					<i class="ion-laptop" ></i >
+					<i class="ion-laptop custom-icon" ></i >
 					&nbsp;TV
 				</ion-item >
 
@@ -43,21 +43,21 @@
 				<ion-item menu-close
 
 						  ui-sref="app.programs" >
-					<i class="ion-videocamera" ></i >
+					<i class="ion-videocamera custom-icon" ></i >
 					&nbsp;Programs
 				</ion-item >
 
 				<ion-item menu-close
 
 						  ui-sref="app.aboutus" >
-					<i class="ion-person-stalker" ></i >
+					<i class="ion-person-stalker custom-icon" ></i >
 					&nbsp;About Us
 				</ion-item >
 
 				<ion-item menu-close
 
 						  ui-sref="app.technical" >
-					<i class="ion-ios-albums-outline" ></i >
+					<i class="ion-ios-albums-outline custom-icon" ></i >
 					&nbsp;Technical
 				</ion-item >
 
@@ -65,25 +65,47 @@
 				<ion-item menu-close
 
 						  ui-sref="app.advertise" >
-					<i class="ion-ios-pricetags-outline" ></i >
+					<i class="ion-ios-pricetags-outline custom-icon" ></i >
 					&nbsp;Advertise
 				</ion-item >
 
 
 				<ion-item menu-close
 
-						  ui-sref="app.broadcast" >
-					<i class="ion-easel" ></i >
+						  ui-sref="app.broadcast " >
+					<i class="ion-easel custom-icon" ></i >
 					&nbsp;Broadcast
 				</ion-item >
 
-			<!--	<ion-item menu-close
+				<ion-item menu-close
 
 						  ui-sref="app.contactus" >
-					<i class="ion-videocamera" ></i >
+					<i class="ion-videocamera custom-icon" ></i >
 					&nbsp;Contact Us
-				</ion-item >-->
+				</ion-item >
 
+
+				<ion-item menu-close
+
+						  ui-sref="app.contactus" >
+					<i class="ion-ios-paper custom-icon" ></i >
+					&nbsp;Feedback
+				</ion-item >
+
+
+				<ion-item menu-close
+
+						  ui-sref="app.contactus" >
+					<i class="ion-share custom-icon" ></i >
+					&nbsp;Share This App
+				</ion-item >
+
+				<ion-item menu-close
+
+						  ui-sref="app.contactus" >
+					<i class="ion-ios-star custom-icon" ></i >
+					&nbsp;Rate This App
+				</ion-item >
 
 				<!--<ion-item menu-close
 				          ng-click="logout()" >
@@ -114,7 +136,7 @@
 			</ion-list >
 		</ion-content >
 		<ion-footer-bar class="bar-light" style="height:49px !important;  ">
-			<h1 class="title" style="font-size: 15px !important;"> COPYRIGHT &copy;2016 Dheeran TV</h1>
+			<h1 class="title" style="font-size: 15px !important;color: white;"> COPYRIGHT &copy;2016 Dheeran TV</h1>
 		</ion-footer-bar>
 	</ion-side-menu>
 
