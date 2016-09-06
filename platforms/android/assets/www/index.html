@@ -144,11 +144,29 @@
 	width: 56px;
 	}
 
+	.dheerantvbg {
+	background: #eb922c;
+	background: -moz-linear-gradient(top, #eb922c 0%, #a41c2b 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eb922c), color-stop(100%,#a41c2b));
+	background: -webkit-linear-gradient(top, #eb922c 0%,#a41c2b 100%);
+	background: -o-linear-gradient(top, #eb922c 0%,#a41c2b 100%);
+	background: -ms-linear-gradient(top, #eb922c 0%,#a41c2b 100%);
+	background: linear-gradient(to bottom, #eb922c 0%,#a41c2b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb922c', endColorstr='#a41c2b',GradientType=0 );
+	}
 
+
+	.bar.bar-positive {
+	border-color: #EF0839;
+	background-color: #eb922c;
+	background-image: linear-gradient(to bottom, #eb922c 0%,#F11818 100%);
+	color: #fff;
+	background: linear-gradient(to bottom, #eb922c 0%,rgb(245, 42, 42) 100%);
+	}
 </style>
 
 </head >
-<body ng-app="dheerantv"  class="platform-android platform-cordova platform-webview">
+<body ng-app="dheerantv"  class="platform-android platform-cordova platform-webview dheerantvbg">
 
 <!--
 	The nav bar that will be updated as we navigate between views.
