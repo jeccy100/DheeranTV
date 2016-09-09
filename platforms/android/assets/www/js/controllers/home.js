@@ -15,7 +15,7 @@ $scope.playerInstance = jwplayer("player");
                                     }],
                                     width:"100%",
                                     aspectratio:"4:3",
-                                    autostart: true,
+                                    autostart: false,
                                     androidhls: true,
                                     primary: 'html5'
                                 });

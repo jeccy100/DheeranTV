@@ -45,6 +45,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
+import 	android.net.Uri;
 
 public class SplashScreen extends CordovaPlugin {
     private static final String LOG_TAG = "SplashScreen";
@@ -280,7 +281,11 @@ public class SplashScreen extends CordovaPlugin {
                 // Use an ImageView to render the image because of its flexible scaling options.
                 splashImageView = new ImageView(context);
                 splashImageView.setImageResource(drawableId);
-             //   Ion.with(splashImageView).load("http://mygifimage.gif");
+                Uri path = Uri.parse("android.resource://com.dheerantv.tvapp/" + drawableId);
+                webView.loadUrl(path.toString());
+              //  wv.loadUrl("file:///android_asset/anim5.gif");
+
+                //Ion.with(splashImageView).load("http://mygifimage.gif");
                 LayoutParams layoutParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
                 splashImageView.setLayoutParams(layoutParams);
 

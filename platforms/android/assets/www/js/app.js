@@ -61,8 +61,8 @@ app.run(function ($rootScope, $ionicPlatform, $cordovaStatusbar) {
              function onPause() {
                              // Handle the pause event
                              console.log('pause event fired!!');
-                            // jwplayer("player").stop();
-                            jwplayer("player").pause();
+                             jwplayer("player").stop();
+                           // jwplayer("player").pause();
 
                          }
 
@@ -111,8 +111,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             				},
             				onExit: function(){
                                 console.log('exiting from home');
-                                //jwplayer("player").stop();
-                                jwplayer("player").pause();
+                                jwplayer("player").stop();
+                               // jwplayer("player").pause();
                               }
             			})
 
