@@ -281,8 +281,8 @@ public class SplashScreen extends CordovaPlugin {
                 // Use an ImageView to render the image because of its flexible scaling options.
                 splashImageView = new ImageView(context);
                 splashImageView.setImageResource(drawableId);
-                Uri path = Uri.parse("android.resource://com.dheerantv.tvapp/" + drawableId);
-                webView.loadUrl(path.toString());
+               // Uri path = Uri.parse("android.resource://com.dheerantv.tvapp/" + drawableId);
+               // webView.loadUrl(path.toString());
               //  wv.loadUrl("file:///android_asset/anim5.gif");
 
                 //Ion.with(splashImageView).load("http://mygifimage.gif");
