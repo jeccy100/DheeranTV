@@ -1,0 +1,106 @@
+<ion-view view-title="{{title}}">
+
+	<!--<ion-nav-buttons side="right">
+
+		<button class="button button-clear icon ion-search" ng-click="showFilterBar()" ></button>
+		<button class="button button-clear icon ion-monitor" ></button>
+		<button class="button button-clear icon ion-home" ></button>
+	</ion-nav-buttons>-->
+
+
+
+	<ion-content >
+
+		<!-- Search Input Control -->
+	<!--	<div class="bar bar-header item-input-inset" >
+			<label class="item-input-wrapper" >
+				<i class="icon ion-ios-search placeholder-icon" ></i >
+				<input type="search"
+				       ng-model="search.name"
+				       placeholder="Search" >
+			</label >
+		</div >-->
+
+	<!--	<br>
+		<autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true" data="movies" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
+-->
+
+
+
+
+
+		<ion-list >
+			<ion-item ng-repeat="video in videos" class="item-thumbnail-left" >
+				<img ng-src="{{video.snippet.thumbnails.default.url}}" ng-click="getSetVideo(video.id.videoId);";>
+
+				</div >
+				<h2 >{{video.snippet.title}}</h2 >
+
+				<p class="genres" >
+					<i class="ion-ios-pricetag-outline" ></i >
+					<span >{{video.snippet.publishedAt | limitTo: 10}}</span >
+				</p >
+
+				<p class="source" >
+					<i class="ion-ios-location-outline" ></i >
+					&nbsp;{{video.snippet.description}}
+				</p >
+
+
+
+			</ion-item >
+		</ion-list >
+
+
+		<div class="card" ng-hide="videos.length">
+			<div class="item item-text-wrap">
+				There is no video available!!</span> .
+			</div>
+		</div>
+			<!-- No Results Found Message -->
+			<!--	<div ng-show="filteredShows.length == 0" >
+                    <p class="text-center" >No results found for search '{{search.name}}'</p >
+                </div >
+
+
+            </ion-list >
+
+
+
+            <!-- Show List -->
+		<!--<ion-list >
+			<ion-item ng-repeat="show in filteredShows = (showService.shows | filter:search )"
+			          ui-sref="app.show({'showId':show.showid})"
+			          class="item-thumbnail-left" >
+				<div class="image"
+				     ng-style="{backgroundImage:'url(' + show.image +')'}" >
+				</div >
+				<h2 >{{show.name}}</h2 >
+
+				<p class="genres" >
+					<i class="ion-ios-pricetag-outline" ></i >
+					<span ng-repeat="genre in show.genres" >{{genre}}<span ng-if="!$last" >, </span ></span >
+				</p >
+
+				<p class="source" >
+					<i class="ion-ios-location-outline" ></i >
+					&nbsp;{{show.country}} | {{show.network}}
+				</p >
+
+				<span ng-show="user.current.favorites[show.showid]" >
+					<i class="ion-heart assertive" ></i >
+				</span >
+
+			</ion-item >
+
+			<!-- No Results Found Message -->
+		<!--	<div ng-show="filteredShows.length == 0" >
+				<p class="text-center" >No results found for search '{{search.name}}'</p >
+			</div >
+
+
+		</ion-list >-->
+		<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+
+	</ion-content >
+</ion-view >

@@ -1,0 +1,58 @@
+
+<style>
+
+    .embed-responsive {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    }
+
+    .embed-responsive.embed-responsive-16by9 {
+    padding-bottom: 56.25%;
+    }
+
+    .embed-responsive-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    }
+</style>
+
+<ion-view title="Rajaneram Episodes"
+          class="search" >
+    <ion-content >
+
+        <!-- Search Input Control -->
+       <!-- <div class="bar bar-header item-input-inset" >
+            <label class="item-input-wrapper" >
+                <i class="icon ion-ios-search placeholder-icon" ></i >
+                <input type="search"
+                       ng-model="search.name"
+                       placeholder="Search" >
+            </label >
+        </div >-->
+
+
+        <div class="list card" ng-repeat="video in videos">
+            <div class="item item-text-wrap">
+                <h2>{{video.snippet.title}}</h2>
+                <p>{{video.snippet.publishedAt | limitTo: 10}}</p>
+            </div>
+            <div class="item item-image">
+               <!-- <img ng-src="{{video.snippet.thumbnails.high.url}}">-->
+
+                <div class="embed-responsive embed-responsive-16by9"><youtube-video class="embed-responsive-item" video-id="video.id.videoId" player-vars="playerVars"></youtube-video></div>
+            </div>
+
+        </div>
+
+
+        <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+    </ion-content >
+</ion-view >

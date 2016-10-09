@@ -1,0 +1,49 @@
+
+<style>
+
+    .embed-responsive {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    }
+
+    .embed-responsive.embed-responsive-16by9 {
+    padding-bottom: 96.25%;
+    }
+
+    .embed-responsive-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    }
+</style>
+<ion-modal-view >
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">{{selectedVideo.snippet.title}}</h1>
+          <button class="button button-clear button-primary" ng-click="closeModal();">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding" >
+         <!--<ion-list>
+        <ion-item ng-repeat="video in selectedVideo">
+          {{video.id.videoId}}
+        </ion-item>
+      </ion-list>-->
+            <div class="list card" id="programCard">
+                <div class="item item-text-wrap" id="customPlayer">
+                    <h2>{{selectedVideo.snippet.title}}</h2>
+                    <p>{{selectedVideo.snippet.publishedAt | limitTo: 10}}</p>
+                </div>
+
+            <div class="item item-image">
+
+                <div class="embed-responsive embed-responsive-16by9"><youtube-video class="embed-responsive-item" object-to-inject="dheeranPlayer" video-id="selectedVideo.id.videoId" player-vars="playerVars" player="dheeranPlayer" player-test="playerTest"></youtube-video></div>
+       </div>
+                </div>
+        </ion-content>
+      </ion-modal-view>
