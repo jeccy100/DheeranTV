@@ -3,5 +3,7 @@ var mod = angular.module('dheerantv.controllers', [
 	'dheerantv.controllers.menu',
 	'dheerantv.controllers.search',
 	'dheerantv.controllers.show',
-	'dheerantv.controllers.rajaneram'
+	'dheerantv.controllers.rajaneram',
+	'dheerantv.controllers.programs',
+	'dheerantv.controllers.program'
 ]);

@@ -9,7 +9,21 @@ mod.controller('MenuCtrl', function($scope, $state, $compile,UserService,$ionicM
 
 
 
+$scope.rateApp=function()
+{
+var devicePlatform = device.platform;
 
+    // Check which platform
+    if (devicePlatform == "iOS") {
+        window.open('https://itunes.apple.com/us/app/YOUR-APP-SLUG-HERE/id000000000?mt=8&uo=4','_system'); // or itms://
+    } else if (devicePlatform == "Android") {
+        window.open('market://details?id=com.dheerantv.tvapp','_system');
+    } else if (devicePlatform == "BlackBerry"){
+        window.open('http://appworld.blackberry.com/webstore/content/<applicationid>');
+    }
+
+
+}
       $scope.showFilterBar = function () {
       //$scope.movies={};
           filterBar = $ionicFilterBar.show({

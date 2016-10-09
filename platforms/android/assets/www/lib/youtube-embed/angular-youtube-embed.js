@@ -130,10 +130,23 @@ angular.module('youtube-embed', [])
             player: '=?',
             playerVars: '=?',
             playerHeight: '=?',
-            playerWidth: '=?'
+            playerWidth: '=?',
+             objectToInject: '=',
+             playerTest: '=?',
         },
         link: function (scope, element, attrs) {
             // allows us to $watch `ready`
+            scope.$on("stop",function( event, flag ) {
+                                        console.log( "stop event :", flag );
+
+            if(flag==1)
+            {
+
+             scope.player.stopVideo();
+            }
+
+                                    });
+
             scope.utils = youtubeEmbedUtils;
 
             // player-id attr > id attr > directive-generated ID
@@ -162,6 +175,18 @@ angular.module('youtube-embed', [])
                     scope.player.currentState = state;
                 });
             }
+/*This method will be called whet the 'objectToInject' value is changes*/
+            scope.$watch('objectToInject', function (value) {
+                /*Checking if the given value is not undefined*/
+                if(value){
+                scope.Obj = value;
+                    /*Injecting the Method*/
+                    scope.Obj.invoke = function(){
+                        //Do something
+                        alert('hi');
+                    }
+                }
+            });
 
             function onPlayerReady (event) {
                 applyBroadcast(eventPrefix + 'ready', scope.player, event);
@@ -247,6 +272,7 @@ angular.module('youtube-embed', [])
             scope.$on('$destroy', function () {
                 scope.player && scope.player.destroy();
             });
+
         }
     };
 }]);

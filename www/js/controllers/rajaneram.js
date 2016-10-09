@@ -1,38 +1,53 @@
 var mod = angular.module('dheerantv.controllers.rajaneram', []);
 
-mod.controller('RajaneramCtrl', function($scope, $state, $stateParams, $ionicListDelegate, ShowsService, UserService,$http) {
-
-	$scope.search = {
-		'name':''
-	};
+mod.controller('RajaneramCtrl', function($scope, $state, $stateParams, $ionicListDelegate,YOUTUBE_PARAMS,getYoutubeVideos,loader) {
 
 
-$scope.playerVars = {
-  rel: 0,
-  showinfo: 0,
-  modestbranding: 0,
-}
+       $scope.videos = [];
+        loader.show();
+      getYoutubeVideos.getVideos(10).then(function(movieData) {
 
-  $scope.videos = [];
 
-    $scope.youtubeParams = {
-      key: 'AIzaSyAiysYLd0qeMYQPYw2vPDW00usrFXH3gDw',
-      type: 'video',
-      maxResults: '5',
-      part: 'id,snippet',
-      q: 'rajaneram',
-      order: 'date',
-      channelId: 'UCikYeWfQdfPRgaH7PktVvhA',
-    }
+                                                      $scope.videos= movieData.data.items;
+                                                      YOUTUBE_PARAMS.pageToken=movieData.data.nextPageToken
+      console.log($scope.videos);
+      $scope.noMoreItemsAvailable = false;
+      loader.hide();
+                                                   });
 
-    $http.get('https://www.googleapis.com/youtube/v3/search', {params:$scope.youtubeParams}).success(function(response){
-      angular.forEach(response.items, function(child){
-        console.log (child);
+
+
+
+$scope.noMoreItemsAvailable = true;
+
+  $scope.loadMore = function() {
+
+loader.show();
+getYoutubeVideos.getVideos(10).then(function(movieData) {
+  YOUTUBE_PARAMS.pageToken=movieData.data.nextPageToken
+angular.forEach(movieData.data.items, function(child){
+
         $scope.videos.push(child);
+
+
       });
-    });
 
 
-	$scope.showService = ShowsService;
-	$scope.user = UserService;
+
+                                    if ( movieData.data.items.length <1 ) {
+                                        $scope.noMoreItemsAvailable = true;
+                                        YOUTUBE_PARAMS.pageToken='';
+                                      }
+
+
+                                      $scope.$broadcast('scroll.infiniteScrollComplete');
+                                      loader.hide();
+                                             });
+
+
+
+  };
+
+
+
 });

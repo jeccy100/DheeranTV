@@ -62,6 +62,7 @@ app.run(function ($rootScope, $ionicPlatform, $cordovaStatusbar) {
                              // Handle the pause event
                              console.log('pause event fired!!');
                              jwplayer("player").stop();
+                             $rootScope.$broadcast( "stop", 1 );
                            // jwplayer("player").pause();
 
                          }
